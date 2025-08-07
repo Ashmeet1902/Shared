@@ -4,10 +4,10 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
     branches:
-      - main
+      - Main
       - master
     paths:
-      - 'main.tf'
+      - 'Main.tf'
       - 'variables.tf'
       - 'README.md'
 
