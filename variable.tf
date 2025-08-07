@@ -14,3 +14,8 @@ variable "locations" {
   type        = string
   default     = "East US"
 }
+variable "resource_group_names" {
+  description = "Name of the Azure Resource Group"
+  type        = string
+  default     = "rg-auto-docs"
+}
