@@ -9,7 +9,7 @@ variable "location" {
   type        = string
   default     = "East US"
 }
-variable "locations" {
+variable "locaions" {
   description = "Azure region"
   type        = string
   default     = "East US"
