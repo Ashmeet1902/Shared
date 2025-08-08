@@ -14,3 +14,13 @@ variable "locaions" {
   type        = string
   default     = "East US"
 }
+variable "locationsssss" {
+  description = "Azure region"
+  type        = string
+  default     = "East US"
+}
+variable "locationsssss_us" {
+  description = "Azure region"
+  type        = string
+  default     = "East US"
+}
