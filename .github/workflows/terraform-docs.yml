@@ -30,5 +30,4 @@ jobs:
           git-push: "true"
           git-commit-message: "terraform-docs: automated update"
           git-push-user-name: github-actions[bot]
-          git-push-
-
+          git-push-user-email: github-actions[bot]@users.noreply.github.com
