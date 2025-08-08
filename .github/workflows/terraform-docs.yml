@@ -4,10 +4,10 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
     branches:
-      - Main
+      - main
       - master
     paths:
-      - 'Main.tf'
+      - 'main.tf'
       - 'variables.tf'
       - 'README.md'
 
@@ -16,13 +16,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
+      - name: Checkout PR branch
         uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}   # PR branch pe checkout karega
+          fetch-depth: 0                # poora git history fetch karega
 
       - name: Generate Terraform Docs
         uses: terraform-docs/gh-actions@v1.0.0
         with:
-          working-dir: .
           output-file: README.md
           output-method: inject
-          git-push: true
+          git-push: "true"
+          git-commit-message: "terraform-docs: automated update"
+          git-push-user-name: github-actions[bot]
+          git-push-
+
