@@ -6,6 +6,7 @@ on:
     branches:
       - main
       - master
+      - feature2
     paths:
       - 'main.tf'
       - 'variables.tf'
