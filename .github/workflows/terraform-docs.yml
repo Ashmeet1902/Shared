@@ -1,8 +1,7 @@
 name: Generate Terraform Docs
 
 on:
-  pull_request:
-    types: [opened, synchronize, reopened]
+  push:
     branches:
       - main
       - master
@@ -17,10 +16,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout PR branch
+      - name: Checkout branch
         uses: actions/checkout@v3
         with:
-          ref: ${{ github.head_ref }}
           fetch-depth: 0
 
       - name: Generate Terraform Docs
@@ -31,4 +29,3 @@ jobs:
           git-push: "true"
           git-commit-message: "terraform-docs: automated update"
           git-push-user-name: github-actions[bot]
-          git-push-user-email: github-actions[bot]@users.noreply.github.com
