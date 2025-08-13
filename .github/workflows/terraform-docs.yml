@@ -8,9 +8,9 @@ on:
       - master
       - feature2
     paths:
-      - 'main.tf'
-      - 'variables.tf'
-      - 'README.md'
+      - '**/main.tf'
+      - '**/variables.tf'
+      - '**/README.md'
 
 jobs:
   docs:
@@ -20,8 +20,8 @@ jobs:
       - name: Checkout PR branch
         uses: actions/checkout@v3
         with:
-          ref: ${{ github.head_ref }}   # PR branch pe checkout karega
-          fetch-depth: 0                # poora git history fetch karega
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
 
       - name: Generate Terraform Docs
         uses: terraform-docs/gh-actions@v1.0.0
